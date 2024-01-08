@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="custom_contracts_form_view2" model="ir.ui.view">
+            <field name="name">custom_contracts_form_view</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='salary_info']" position='after'>
+                    <label for="emp_share" string="Emp.Share" />
+                    <field name='emp_share'/>
+                    <br/>
+                    <label for="medical_ins" string="Medical Ins." />
+                    <field name='medical_ins'/>
+                    <br/>
+                    <label for="tax" string="TAX"/>
+                    <field name="tax"/>
+                    <br/>
+                    <label for="shohdaa" string="Shohdaa"/>
+                    <field name="shohdaa"/>
+                    <br/>
+                    <label for="net_salary" string="NET Salary" />
+                    <field name='net_salary'/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

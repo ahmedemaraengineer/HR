@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record id="custom_emp_id_view" model="ir.ui.view">
+            <field name="name">custom_emp_id_view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+	        <xpath expr="//field[@name='job_title']" position='after'>
+                <br/>
+                <label for="machine_id" string="Employee ID" />
+                <field name='machine_id' widget="char" />
+		    </xpath>
+            </field>
+        </record>
+
+        <record id="emp_docs_card_view" model="ir.ui.view">
+            <field name="name">emp_docs_card_view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+            
+            <div name="button_box" position="inside">
+                <button name="action_view_emp_documents" type='object' class="oe_stat_button" icon="fa-archive">
+                    <div class="o_stat_info">
+                        <field name="documents_no" class="o_stat_value"/>
+                        <span class="o_stat_text">Documents</span>
+                    </div>
+                </button>
+            </div>
+           
+            </field>
+        </record>
+
+        <record id="custom_emp_id_serch" model="ir.ui.view">
+            <field name="name">custom.emp.id.serch</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+	        <xpath expr="//field[@name='name']" position='before'>
+                <field name="machine_id" string="Employee ID" />
+		    </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
